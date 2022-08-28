@@ -19,12 +19,6 @@ $(function () {
 		$(".wrapper").addClass("toggled")
 	})
 
-	$(function () {
-		for (var e = window.location, o = $(".metismenu li a").filter(function () {
-			return this.href == e
-		}).addClass("").parent().addClass("mm-active"); o.is("li");) o = o.parent("").addClass("mm-show").parent("").addClass("mm-active")
-	})
-
 
 	$(".toggle-icon").click(function () {
 		$(".wrapper").hasClass("toggled") ? ($(".wrapper").removeClass("toggled"), $(".sidebar-wrapper").unbind("hover")) : ($(".wrapper").addClass("toggled"), $(".sidebar-wrapper").hover(function () {
@@ -111,11 +105,5 @@ $(function () {
 	}), $("#headercolor8").on("click", function () {
 		$("html").addClass("color-header headercolor8"), $("html").removeClass("headercolor1 headercolor2 headercolor4 headercolor5 headercolor6 headercolor7 headercolor3")
 	})
-
-
-	new PerfectScrollbar(".header-message-list")
-	new PerfectScrollbar(".header-notifications-list")
-
-
 
 });

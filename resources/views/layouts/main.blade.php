@@ -31,6 +31,10 @@
   <!--start wrapper-->
   <div class="wrapper">
 
+    @if (session()->has('message'))
+      <div id="flash-data" data-flashdata="{{ session('message') }}"></div>
+    @endif
+
     @include('layouts.header')
 
     @include('layouts.sidebar')
@@ -59,12 +63,18 @@
   <script src="/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <!--plugins-->
   <script src="/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="/vendor/ajax/lib/ajax.js"></script>
+  <script src="/vendor/moment/moment.js"></script>
   <script src="/vendor/simplebar/js/simplebar.min.js"></script>
   <script src="/vendor/metismenu/js/metisMenu.min.js"></script>
   <script src="/vendor/datatable/js/jquery.dataTables.min.js"></script>
 	<script src="/vendor/datatable/js/dataTables.bootstrap5.min.js"></script>
+  <script src="/vendor/chartjs/dist/chart.js"></script>
+  <script src="/vendor/apexcharts/dist/apexcharts.js"></script>
   <!--app-->
   <script src="/js/app.js"></script>
+
+  @yield('javascript')
 
 </body>
 

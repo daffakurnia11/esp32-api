@@ -20,6 +20,8 @@ Route::controller(PanelController::class)->group(function () {
   Route::get('panel_sensor/{sensor:plant_name}', 'show');
   Route::get('panel_sensor/{sensor:plant_name}/temperature', 'get_temperature');
   Route::post('panel_sensor/temperature', 'post_temperature');
+
+  Route::get('panel_sensor/{sensor:plant_name}/monitoring', 'sensor_monitoring');
 });
 
 Route::controller(MotorController::class)->group(function () {
